@@ -49,11 +49,78 @@ Windows Server 2016
 - R2023b Update 4: Receives an error mentioning that loading “libmwlmgrimpl.dll” failed. So far, I haven't found any workarounds that aren't horribly invasive.
 
 Windows Subsystem for Linux 2 (WSL2)
-- Any release: There is no definitive workflow. Install the libraries that MathWorks lists as necessary (since they now do this because it concerns them.)
+- Any release: There is no definitive workflow. Install the libraries that MathWorks lists as necessary (https://github.com/mathworks-ref-arch/container-images/tree/main/matlab-deps).
+
+macOS Monterey (Apple Silicon)
+- R2014a: The installer appears distorted, but works. Probably a font-related issue. After installation, Java errors will appear upon launching MATLAB and can be fixed by downloading this patch: https://www.mathworks.com/support/bugreports/1098655 Afterwards, the font will still appear distorted, but seems to work.
+- R2013b and older will not work. Maybe it’s possible to overcome this with having the installer point to older JREs, but I haven’t tried this nor do I consider it worth trying. I imagine using JREs from around 2013 is a big security concern.
+
+macOS Ventura
+- R2014b: Works, no additional steps needed.
+- R2017b: Does not work, no known workaround.
+
+Ubuntu 22.04
+- R2010bSP2: Library errors that are only going to ever be resolved by installing older libraries on the OS and therefore highly unrecommended since it’s dangerous (just use a supported version of Linux in a VM.)
+- R2012a-R2013b: Activation module does not work and downloading a license file manually will not work since it will say your MAC address is 0000000000. Only a network license works.
+    - It seems like this is addressed in this article: https://www.mathworks.com/matlabcentral/answers/100235-why-can-t-i-activate-matlab-or-start-the-network-license-manager-in-a-newer-linux-environment
+	But none of the suggestions seemed to work on the OS I’m testing on.
+    - This seems to be less of an issue for Virtual Machines, but is not a guarantee the MAC address will be successfully pulled if it is on a Virtual Machine.
+
+Ubuntu 22.10 STS
+- R2016a: Works, no additional steps needed.
+
+RedHat EL 8.5
+- R2010a: Probably the same as R2010bSP2 on Ubuntu 22.04. TL;DR: No, and there is no reasonable workaround.
+
+Fedora 38
+- R2023a: After installation, remove/rename libfreetype.so.6 and libfreetype.so.6.16 from /usr/local/MATLAB/R2023a/bin/glnxa64/
+
+Arch
+- Any release - Use the Arch Wiki + ./MATLABWindow + Linux library dependencies page to determine what you need (yes, I know, there is no Arch section. You're using Arch, help yourself a bit.) https://github.com/mathworks-ref-arch/container-images/tree/main/matlab-deps
+
+Clear Linux
+- No idea.
+
 #NLM
+
+RHEL/CentOS/Scientific Linux/etc 7.9
+- v11.18.1.0: Install LSB. “sudo yum install lsb”
+
+RHEL/CentOS Stream/Scientific Linux/etc 9+ & Ubuntu 24.04+
+- v11.18.1.0: You will need to manually download the LSB installation package from Oracle Linux's website and install it.
 
 #RR
 
+Ubuntu 20.04 LTS
+- R2022a: Rename the following libraries in “/usr/local/RoadRunner_R2022a/bin/glnxa64/” so they have an “.old” extension at the end of them:
+    - libdrm.so.2
+    - libXi.so.6
+    - libX11.so.6
+    - libXau.so.6
+    - libXext.so.6
+    - libXdmcp.so.6
+    - libXfixes.so.3
+    - libXdamage.so.1
+    - libXrender.so.1
+    - libXxf86vm.so.1
+    - libxshmfence.so.1
+    - libcurl.so.4
+
+Ubuntu 22.04 LTS
+- R2022a: PROCEED WITH CAUTION! This is the first version of Ubuntu that does not ship with libidn.so.11 and instead comes with 12. Installing older libraries is strongly discouraged because it’ll break other things surrounding the OS. Ubuntu 21.04 was the last version of Ubuntu to have libidn.so.11. We have an internal video that suggests creating symbolic links will fix this, but I’m not convinced that won’t break something else in the OS.
+    - If you don’t care about fucking up your computer, run these commands:
+    - sudo ln -s /usr/lib/x86_64-linux-gnu/libidn.so.12 /usr/lib64/libidn.so.11
+    - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/libidn.so.11 (you'll probably want to add this to your bash.rc file.)
+
+Debian 11
+- R2022b: No additional steps needed (figures).
+
+CentOS, RedHat, Fedora, Rocky Linx, openSUSE, Mandrake Linux, & any RPM-based distro
+- RoadRunner will not work. It installs with a deb file that has too many dependencies on Debian-based distros to (REASONABLY) work on RPM-based distros.
+
 #PolA
+Windows Subsystem for Linux 2 (WSL2)
+- R2022b: Officially listed as unsupported with no known workaround for any installation issues.
 
 #Nautilus
+Something Debian-based: If you can't enable hidden files, use  sudo apt install dbus-x11
