@@ -72,6 +72,9 @@ Ubuntu 22.10 STS
 RedHat EL 8.5
 - R2010a: Probably the same as R2010bSP2 on Ubuntu 22.04. TL;DR: No, and there is no reasonable workaround.
 
+RedHat EL 8.10
+- R2018b: Crashes on splash screen. Can't seem to find a reasonable workaround for any mode other than -nodesktop.
+
 Fedora 38
 - R2023a: After installation, remove/rename libfreetype.so.6 and libfreetype.so.6.16 from /usr/local/MATLAB/R2023a/bin/glnxa64/
 
