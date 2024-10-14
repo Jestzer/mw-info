@@ -50,7 +50,7 @@
 - R12.1 - v6.1g
 - R12 - v6.1g
 - R11.1 - 5.12b
-- R11 - 5.12b - Note: this is the last release that uses the now-standard licensing syntax. Anything older than this uses a completely different license syntax.
+- R11 - 5.12b - Note: this is the first release that uses the now-standard licensing syntax. Anything older than this uses a completely different license syntax.
 - R10 - 5.12b
 - R9 - 5.0a
 - R8 - 5.0a
