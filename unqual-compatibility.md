@@ -50,13 +50,16 @@
 ## Windows Subsystem for Linux 2 (WSL2)
 - **Any release**: There is no definitive workflow. Install the libraries that MathWorks lists as necessary ([MATLAB dependencies](https://github.com/mathworks-ref-arch/container-images/tree/main/matlab-deps)).
 
-## macOS Monterey (Apple Silicon)
+## macOS Monterey (12) (Apple Silicon)
 - **R2014a**: The installer appears distorted, but works. Probably a font-related issue. After installation, Java errors will appear upon launching MATLAB and can be fixed by downloading this patch: [Bug Report 1098655](https://www.mathworks.com/support/bugreports/1098655). Afterwards, the font will still appear distorted, but seems to work.
 - **R2013b and older**: Will not work. Maybe it’s possible to overcome this with having the installer point to older JREs, but I haven’t tried this nor do I consider it worth trying. I imagine using JREs from around 2013 is a big security concern.
 
-## macOS Ventura
+## macOS Ventura (13) (Apple Silicon)
 - **R2014b**: Works, no additional steps needed.
 - **R2017b**: Does not work, no known workaround.
+
+## macOS Sequoia (15) (Apple Silicon)
+- **R2020a and older**: System architecture cannot be detected and therefore, will not run. It will seemingly do nothing when attempting to launch MATLAB.
 
 ## Ubuntu 22.04
 - **R2010bSP2**: Library errors that are only going to ever be resolved by installing older libraries on the OS and therefore highly unrecommended since it’s dangerous (just use a supported version of Linux in a VM.)
