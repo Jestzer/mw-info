@@ -21,6 +21,7 @@
       - Installing all Windows 8.1 updates and then restarting the machine will resolve this (you didn't fully update in the previous step).
     - A classpath issue followed by Java errors.
       - Changing the JRE to JRE 1.8.0_351, JDK-19, or R2022b's JRE will not resolve the issue. You need to reinstall R2023a and delete the installation folder between uninstalling and installing again.
+- **R2024a**: "lmgrimpl\libmwlmgrimpl.dlfailed" error. Does not work, no known workaround at the moment.
 - **R2024b and newer**: Does not work, no known workaround at the moment.
 
 ## Windows 10 (64-bit) & 11
