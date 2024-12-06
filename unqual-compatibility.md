@@ -91,6 +91,8 @@
 
 ## RHEL/CentOS/Scientific Linux/etc 7.9
 - **v11.18.1.0**: Install LSB. Use the command: `sudo yum install lsb`
+- **v11.19.5.0**: Works, no additional steps needed.
+- **v11.19.6.2**: Works, no additional steps needed.
 
 ## RHEL/CentOS Stream/Scientific Linux/etc 9+ & Ubuntu 24.04+
 - **v11.18.1.0**: You will need to manually download the LSB installation package from Oracle Linux's website and install it.
