@@ -73,6 +73,9 @@
 ## Ubuntu 22.10 STS
 - **R2016a**: Works, no additional steps needed.
 
+## Debian 13 Beta as of 12-12-2024
+- **R2024b**: With some workarounds, can be installed and launched, but crashes. No known workaround at the moment.
+
 ## RedHat EL 8.5
 - **R2010a**: Probably the same as R2010bSP2 on Ubuntu 22.04. TL;DR: No, and there is no reasonable workaround.
 
