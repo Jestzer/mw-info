@@ -47,7 +47,8 @@
 ## Windows Server 2016
 - **R2023a Prerelease**: Works, no additional steps needed.
 - **R2023b Update 3 and older**: Supposedly works.
-- **R2023b Update 4**: Receives an error mentioning that loading “libmwlmgrimpl.dll” failed. So far, I haven't found any workarounds that aren't horribly invasive.
+- **R2023b Update 4 and newer**: Receives an error mentioning that loading “libmwlmgrimpl.dll” failed. So far, I haven't found any workarounds that aren't horribly invasive.
+- **R2024a and newer**: Same as R2023b Update 4 and newer.
 
 ## Windows Subsystem for Linux 2 (WSL2)
 - **Any release**: There is no definitive workflow. Install the libraries that MathWorks lists as necessary ([MATLAB dependencies](https://github.com/mathworks-ref-arch/container-images/tree/main/matlab-deps)).
