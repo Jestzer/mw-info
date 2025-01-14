@@ -78,7 +78,7 @@
 - **R2024b**: With some workarounds, can be installed and launched, but crashes. No known workaround at the moment.
 
 ## CentOS Stream 10
-- **R2025a Prerelease and older**: These releases requrie X11, so the software will install, but in short, you can't launch MATLAB. You can't install X11 normally on this version of CentOS since it is built around Wayland and XWayland doesn't seem to satsify MATLAB's needs.
+- **R2025a Prerelease and older**: libXt needs to be installed. This worked one time, but not another, I swear.
 
 ## RedHat EL 8.5
 - **R2010a**: Probably the same as R2010bSP2 on Ubuntu 22.04. TL;DR: No, and there is no reasonable workaround.
