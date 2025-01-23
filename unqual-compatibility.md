@@ -80,6 +80,9 @@
 ## CentOS Stream 10
 - **R2025a Prerelease and older**: libXt needs to be installed. This worked one time, but not another, I swear.
 
+## RedHat EL/CentOS/etc 7.9
+- **R2024b and newer**: Requires GLIBC 2.18, but this distro only comes with 2.17. While it's technically possible to upgrade to 2.18, it'll likely break something else. Don't try this.
+
 ## RedHat EL 8.5
 - **R2010a**: Probably the same as R2010bSP2 on Ubuntu 22.04. TL;DR: No, and there is no reasonable workaround.
 
