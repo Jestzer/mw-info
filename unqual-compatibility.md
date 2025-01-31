@@ -74,8 +74,8 @@
 ## Ubuntu 22.10 STS
 - **R2016a**: Works, no additional steps needed.
 
-## Debian 13 Beta as of 12-12-2024
-- **R2024b**: With some workarounds, can be installed and launched, but crashes. No known workaround at the moment.
+## Debian 13 Beta as of 1-31-2025
+- **R2024b**: Some libraries need to be installed. However, the MSH does not work and therefore, any licenses requiring it or using LNU will not work.
 
 ## CentOS Stream 10
 - **R2025a Prerelease and older**: libXt needs to be installed. This worked one time, but not another, I swear.
