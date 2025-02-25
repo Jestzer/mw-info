@@ -1,4 +1,4 @@
-| Version  | Release Number | Year |
+| Release Number  | Version | Year |
 |----------|----------------|------|
 | R2024b   | 52             |      |
 | R2024a   | 51             |      |
